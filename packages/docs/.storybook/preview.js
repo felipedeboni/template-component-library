@@ -1,7 +1,4 @@
-import results from '@org/react/.jest-test-results.json';
-import { withTests } from '@storybook/addon-jest';
-
-console.log('RESULTS', results);
+import { initialize, mswDecorator } from 'msw-storybook-addon';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -12,8 +9,11 @@ export const parameters = {
     }
   }
 };
-export const decorators = [
-  withTests({
-    results
-  })
-];
+
+// Initialize MSW
+initialize({
+  onUnhandledRequest: 'bypass'
+});
+
+// Provide the MSW addon decorator globally
+export const decorators = [mswDecorator];

@@ -16,6 +16,7 @@ Just clone this repository, find `@org` and replace with any `@` you want and ru
 
 - `dev`: runs dev on each package.
 - `build`: build all projects.
+- `test`: test all projects.
 - `changeset`: run changeset without any params.
 - `version-packages`: update version of each modified package.
 - `release`: build all packages except for the docs, publish them on npm and create git tags.
